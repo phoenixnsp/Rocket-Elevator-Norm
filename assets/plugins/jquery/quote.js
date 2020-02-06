@@ -1,7 +1,7 @@
 $(document).ready(function () {
   $(".quotePage").hide(); /* HIDE ALL QUOTE FORM */
 
-});
+
 
 /* Selector Function*/
 $("#quoteSelector").change(function () {
@@ -31,26 +31,26 @@ function residentialResults() {
 
 
 
-  var apptFloorRes = Math.ceil(xres / (yres * 6));
-  var columnRes = Math.ceil(yres / 20);
+  var apptFloor = Math.ceil(xres / (yres * 6));
+  var column = Math.ceil(yres / 20);
 
-  var needElevatorRes = apptFloorRes * columnRes;
-  $("#residentNumberElevators").val(needElevatorRes);
+  var needElevator = apptFloor * column;
+  $("#residentNumberElevators").val(needElevator);
 
   /* standard */
-  var standardPriceRes = needElevatorRes * 7565;
+  var standardPriceRes = needElevator * 7565;
   var standardServiceRes = standardPriceRes * 0.1;
   var standardServicePriceRes = standardServiceRes.toFixed(2);
   var standardTotalPriceRes = +standardPriceRes + +standardServicePriceRes;
 
   /* Premium */
-  var premiumPriceRes = needElevatorRes * 12345;
+  var premiumPriceRes = needElevator * 12345;
   var premiumServiceRes = premiumPriceRes * 0.13;
   var premiumServicePriceRes = premiumServiceRes.toFixed(2);
   var premiumTotalPriceRes = +premiumPriceRes + +premiumServicePriceRes;
 
   /* Excelium */
-  var exceliumPriceRes = needElevatorRes * 15400;
+  var exceliumPriceRes = needElevator * 15400;
   var exceliumServiceRes = exceliumPriceRes * 0.16;
   var exceliumServicePriceRes = exceliumServiceRes.toFixed(2);
   var exceliumTotalPriceRes = +exceliumPriceRes + +exceliumServicePriceRes;
@@ -292,5 +292,4 @@ function hybridResults() {
   });
 
 };
-
-/*$("#installationCost").val(currency(installationCost, {formatWithSymbol: true}).format());*/
+});
